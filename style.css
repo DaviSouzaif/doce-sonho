@@ -251,6 +251,10 @@ h2 {
     margin-bottom: 10px;
 }
 
+.foto-brownie {
+    object-position: 30% 25%;
+}
+
 .produto h3 {
     color: var(--rosa-medio);
     font-family: var(--fonte-titulo);

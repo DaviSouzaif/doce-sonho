@@ -1,93 +1,251 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doce Sonho</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doce Sonho — Doceria</title>
+<meta name="description" content="Doce Sonho: brownies, sorvetes e dindins gourmet feitos com carinho. Faça seu pedido pelo WhatsApp e receba rapidinho.">
+<meta property="og:title" content="Doce Sonho — Doceria">
+<meta property="og:description" content="Brownies, sorvetes e dindins gourmet feitos com carinho. Peça pelo WhatsApp!">
+<meta property="og:image" content="Assunto.png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header>
-        <img src="Assunto.png" alt="Logo Doce Sonho" class="logo">
-        <p>Onde todo sonho tem um toque doce. 💖</p>
-    </header>
+<header>
+  <img src="Assunto.png" alt="Logo Doce Sonho" class="logo">
+  <h1>Doce Sonho</h1>
+  <p>Onde todo sonho tem um toque doce. 💖</p>
+</header>
+
 <nav>
-    <a href="#">Início</a>
-    <a href="#produtos">Doces</a>
-    <a href="#pedidos">Pedidos</a>
-    <a href="#contato">Contato</a>
+  <a href="#">Início</a>
+  <a href="#produtos">Doces</a>
+  <a href="#pedidos">Pedidos</a>
+  <a href="#contato">Contato</a>
 </nav>
 
-    <main>
+<main>
 
-        <section class="destaque">
-            <h2>Bem-vindo à Doce Sonho!</h2>
-            <p>Encontre aqui deliciosos doces feitos com muito carinho.</p>
-<div class="decoracao">✦ ✧ ✦</div>
-            <a href="#produtos" class="botao-destaque">Ver nossos doces</a>
-        </section>
+  <section class="destaque">
+    <h2>Bem-vindo à Doce Sonho!</h2>
+    <p>Encontre aqui deliciosos doces feitos com muito carinho.</p>
+    <div class="decoracao">✦ ✧ ✦</div>
+    <a href="#produtos" class="botao-destaque">Ver nossos doces</a>
+  </section>
 
-        <section class="produtos" id="produtos">
-            <h2>Nossos doces</h2>
+  <section id="galeria">
+    <h2>De dar água na boca</h2>
+    <p class="galeria-subtitulo">Pequenos momentos, grandes sabores 💗</p>
 
-            <div class="produto">
-<img src="morango.jpg" alt="Morango do Amor">
-                <h3>🍫 Brownie</h3>
-<p>Delicioso brownie feito com muito chocolate.</p>
-<strong>R$ 7,00</strong>
-<a href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20pedir%20um%20Brownie%20🍫" class="botao-whatsapp">
-    Comprar pelo WhatsApp
-</a>
-            </div>
+    <div class="foto-destaque">
+      <img src="galeria7.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <div class="legenda-destaque">
+        <h3>Um carinho em forma de doce 💗</h3>
+        <p>Cada detalhe é preparado com carinho para deixar seu dia ainda mais gostoso.</p>
+      </div>
+    </div>
 
-            <div class="produto">
-<img src="brigadeiro.jpg" alt="Brigadeiros">
-                <h3>🍦 Sorvete</h3>
-<p>Delicioso sorvete para refrescar seu dia.</p>
-<strong>R$ 4,00</strong>
-<a href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20pedir%20um%20Sorvete%20🍦" class="botao-whatsapp">
-    Comprar pelo WhatsApp
-</a>
-            </div>
+    <div class="galeria">
+      <img src="galeria1.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="galeria2.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="galeria3.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="galeria4.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="galeria5.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="galeria6.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="galeria8.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="galeria9.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+    </div>
+  </section>
 
-            <div class="produto">
-<img src="bolo.jpg" alt="Bolo de Chocolate">
-                <h3>🍓 Dindin Gourmet</h3>
-<p>Dindin gourmet cremoso e delicioso.</p>
-<strong>R$ 4,00</strong>
-<a href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20pedir%20um%20Dindin%20Gourmet%20🍓" class="botao-whatsapp">
-    Comprar pelo WhatsApp
-</a>
-            </div>
+  <section class="produtos" id="produtos">
+    <h2 style="grid-column: 1 / -1;">Nossos doces</h2>
 
-        </section>
-<section id="pedidos" class="informacao">
+    <div class="produto">
+      <img src="morango.JPG" alt="Brownie Doce Sonho">
+      <h3>Brownie</h3>
+      <p>Delicioso brownie feito com muito chocolate.</p>
+      <strong>R$ 7,00</strong>
+      <a href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20pedir%20um%20Brownie%20" class="botao-whatsapp">
+        Comprar pelo WhatsApp
+      </a>
+    </div>
+
+    <div class="produto">
+      <img src="brigadeiro.JPG" alt="Sorvete Doce Sonho">
+      <h3>Sorvete</h3>
+      <p>Delicioso sorvete para refrescar seu dia.</p>
+      <strong>R$ 4,00</strong>
+      <div class="sabores-escolha" data-produto="Sorvete">
+        <p><strong>Escolha seu sabor:</strong></p>
+        <div class="sabor-item" data-sabor="Flocos" onclick="selecionarSabor(this)">
+          <img src="sorvete-flocos.jpg" alt="Sorvete sabor Flocos">
+          <span>Flocos</span>
+        </div>
+        <div class="sabor-item" data-sabor="Chocolate" onclick="selecionarSabor(this)">
+          <img src="sorvete-chocolate.jpg" alt="Sorvete sabor Chocolate">
+          <span>Chocolate</span>
+        </div>
+        <button onclick="pedirComSabor(this)" class="botao-whatsapp">
+          Comprar pelo WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <div class="produto">
+      <img src="bolo.jpg" alt="Dindin Gourmet Doce Sonho">
+      <h3>Dindin Gourmet</h3>
+      <p>Dindin gourmet cremoso e delicioso.</p>
+      <strong>R$ 4,00</strong>
+      <div class="sabores-escolha" data-produto="Dindin Gourmet">
+        <p><strong>Escolha seu sabor:</strong></p>
+        <div class="sabor-item" data-sabor="Ninho com Nutella" onclick="selecionarSabor(this)">
+          <img src="dindin-ninho-nutella.jpg" alt="Dindin Gourmet Ninho com Nutella">
+          <span>Ninho com Nutella</span>
+        </div>
+        <div class="sabor-item" data-sabor="Morango com Nutella" onclick="selecionarSabor(this)">
+          <img src="dindin-morango-nutella.jpg" alt="Dindin Gourmet Morango com Nutella">
+          <span>Morango com Nutella</span>
+        </div>
+        <div class="sabor-item" data-sabor="Chocolate" onclick="selecionarSabor(this)">
+          <img src="dindin-chocolate.jpg" alt="Dindin Gourmet Chocolate">
+          <span>Chocolate</span>
+        </div>
+        <div class="sabor-item" data-sabor="Prestígio" onclick="selecionarSabor(this)">
+          <img src="dindin-prestigio.jpg" alt="Dindin Gourmet Prestígio">
+          <span>Prestígio</span>
+        </div>
+        <button onclick="pedirComSabor(this)" class="botao-whatsapp">
+          Comprar pelo WhatsApp
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="video-destaque">
+    <h2>Adquira o seu! </h2>
+    <video id="video-doce" muted loop playsinline webkit-playsinline="true" x-webkit-airplay="allow" preload="auto" poster="galeria7.jpg">
+      <source src="doce-video.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+  </section>
+
+  <section id="pedidos" class="informacao">
     <h2>🛒 Faça seu pedido</h2>
     <p>Escolha seu doce favorito e fale conosco pelo WhatsApp.</p>
-
     <a href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20🍰" class="botao-whatsapp">
-        Fazer pedido pelo WhatsApp
+      Fazer pedido pelo WhatsApp
     </a>
-</section>
-<section id="contato" class="informacao">
+  </section>
+
+  <section id="contato" class="informacao">
     <h2>📍 Fale com a Doce Sonho</h2>
     <p>Entre em contato conosco para fazer seu pedido ou tirar suas dúvidas.</p>
-
     <p>📱 WhatsApp: (88) 99798-4717</p>
-
+    <p>💳 Formas de pagamento: Dinheiro, Pix e Cartão</p>
     <a href="https://wa.me/5588997984717" class="botao-whatsapp">
-        Falar pelo WhatsApp
+      Falar pelo WhatsApp
     </a>
-</section>
+  </section>
 
-    </main>
+</main>
 
-    <footer>
-        <p>© 2026 Doce Sonho — Feito com amor 💕</p>
-    </footer>
+<footer>
+  <p>© 2026 Doce Sonho — Feito com amor 💕</p>
+</footer>
+
+<a
+  href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20🍰"
+  class="whatsapp-flutuante"
+  target="_blank"
+  rel="noopener"
+  aria-label="Falar no WhatsApp"
+>
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+    <path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.87 11.87L4 20l4.24-1.11a7.9 7.9 0 0 0 3.8.97h.01a7.94 7.94 0 0 0 5.55-13.54zm-5.55 12.2a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1 1 5.59 3.09zm3.62-4.94c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.62.77-.11.13-.23.15-.42.05a5.4 5.4 0 0 1-1.6-.98 5.99 5.99 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4.09-.1.2-.23.3-.35.1-.11.13-.2.2-.33.06-.13.03-.24-.02-.34-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.2-.68.66-.68 1.6s.7 1.86.8 1.99c.1.13 1.37 2.1 3.33 2.94.46.2.83.32 1.11.41.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.16-.46.16-.86.11-.94-.05-.08-.18-.13-.38-.23z"/>
+  </svg>
+</a>
+
+<script>
+  const numeroWhatsapp = "5588997984717";
+
+  // Toca o vídeo só quando ele entra na tela, pausa quando sai
+  const video = document.getElementById("video-doce");
+  let vídeoLiberado = false;
+
+  function tentarTocarVideo() {
+    if (!video) return;
+    video.play().catch(() => {
+      // Autoplay bloqueado pelo navegador; aguarda o próximo toque na tela
+    });
+  }
+
+  if (video) {
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          tentarTocarVideo();
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.3 });
+    observador.observe(video);
+
+    // Plano B: se o navegador bloquear o autoplay, qualquer toque na tela libera o vídeo
+    ["touchstart", "click", "scroll"].forEach((evento) => {
+      document.addEventListener(evento, () => {
+        if (!vídeoLiberado) {
+          vídeoLiberado = true;
+          tentarTocarVideo();
+        }
+      }, { once: true, passive: true });
+    });
+  }
+
+  // Seleção de sabor (funciona pra qualquer produto com sabores)
+  function selecionarSabor(elemento) {
+    const grupo = elemento.closest(".sabores-escolha");
+    grupo.querySelectorAll(".sabor-item").forEach(item => {
+      item.classList.remove("selecionado");
+    });
+    elemento.classList.add("selecionado");
+    grupo.dataset.saborSelecionado = elemento.dataset.sabor;
+  }
+
+  // Envia o pedido pelo WhatsApp com o sabor escolhido
+  function pedirComSabor(botao) {
+    const grupo = botao.closest(".sabores-escolha");
+    const sabor = grupo.dataset.saborSelecionado;
+    const produto = grupo.dataset.produto;
+
+    if (!sabor) {
+      alert("Escolha um sabor antes de fazer o pedido.");
+      return;
+    }
+
+    const mensagem = `Olá! Gostaria de pedir um ${produto} sabor ${sabor}. `;
+    window.location.href = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
+  }
+
+  // Visualizador de imagem em tela cheia (galeria)
+  function abrirImagem(src) {
+    const janela = document.createElement("div");
+    janela.className = "visualizador";
+    janela.innerHTML = `
+      <span class="fechar">&times;</span>
+      <img src="${src}" alt="Imagem ampliada">
+    `;
+    document.body.appendChild(janela);
+
+    janela.querySelector(".fechar").onclick = () => janela.remove();
+    janela.onclick = (evento) => {
+      if (evento.target === janela) janela.remove();
+    };
+  }
+</script>
 
 </body>
 </html>

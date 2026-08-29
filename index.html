@@ -48,12 +48,12 @@
     </div>
 
     <div class="galeria">
-      <img src="galeria1.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
       <img src="galeria2.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
       <img src="galeria3.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
-      <img src="galeria4.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
       <img src="galeria5.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
       <img src="galeria6.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="galeria-sorvete1.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="galeria-sorvete2.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
       <img src="galeria8.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
       <img src="galeria9.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
     </div>
@@ -63,7 +63,7 @@
     <h2 style="grid-column: 1 / -1;">Nossos doces</h2>
 
     <div class="produto">
-      <img src="morango.JPG" alt="Brownie Doce Sonho">
+      <img src="morango.JPG" alt="Brownie Doce Sonho" class="foto-brownie">
       <h3>Brownie</h3>
       <p>Delicioso brownie feito com muito chocolate.</p>
       <strong>R$ 7,00</strong>
@@ -116,6 +116,10 @@
           <img src="dindin-prestigio.jpg" alt="Dindin Gourmet Prestígio">
           <span>Prestígio</span>
         </div>
+        <div class="sabor-item" data-sabor="Pudim" onclick="selecionarSabor(this)">
+          <img src="dindin-pudim.jpg" alt="Dindin Gourmet Pudim">
+          <span>Pudim</span>
+        </div>
         <button onclick="pedirComSabor(this)" class="botao-whatsapp">
           Comprar pelo WhatsApp
         </button>
@@ -125,7 +129,7 @@
   </section>
 
   <section class="video-destaque">
-    <h2>Adquira o seu! </h2>
+    <h2>Uma colherada de pura cremosidade </h2>
     <video id="video-doce" muted loop playsinline webkit-playsinline="true" x-webkit-airplay="allow" preload="auto" poster="galeria7.jpg">
       <source src="doce-video.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.

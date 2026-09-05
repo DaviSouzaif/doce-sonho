@@ -1,0 +1,654 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* ===== Identidade visual — rosa e branco da Doce Sonho ===== */
+:root {
+    --rosa-escuro: #c2185b;
+    --rosa-medio: #e85d75;
+    --rosa-suave: #ff8fab;
+    --rosa-claro: #fff0f3;
+    --fundo: #fff6f8;
+    --branco: #ffffff;
+    --dourado: #d9a463;
+    --texto: #4a2138;
+    --texto-suave: #7a5c68;
+    --whatsapp: #25d366;
+
+    --fonte-titulo: 'Fraunces', Georgia, serif;
+    --fonte-corpo: 'Nunito', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: var(--fonte-corpo);
+    background-color: var(--fundo);
+    color: var(--texto);
+}
+
+img { max-width: 100%; display: block; }
+
+/* ===== Topo ===== */
+.topo {
+    background-color: var(--branco);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.topo-conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px 0;
+}
+
+.logo { width: 62px; height: auto; }
+
+.status-loja {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+.status-aberto { background-color: #d7f5df; color: #1e7a3c; }
+.status-fechado { background-color: #ffdfe1; color: #a12a2a; }
+
+.nav-principal {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    padding: 12px 10px;
+    flex-wrap: wrap;
+}
+
+.nav-principal a {
+    color: var(--rosa-medio);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+}
+
+.nav-principal a:hover { color: var(--rosa-escuro); }
+
+/* ===== Hero (bloco Magnolia: foto grande + texto) ===== */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+}
+
+.hero-foto {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+}
+
+.hero-texto {
+    background: linear-gradient(135deg, var(--rosa-suave), var(--rosa-escuro));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px 48px;
+}
+
+.rotulo {
+    font-family: var(--fonte-corpo);
+    font-weight: 800;
+    font-size: 12.5px;
+    letter-spacing: 2px;
+    color: var(--dourado);
+    margin: 0 0 12px;
+}
+
+.hero-texto .rotulo { color: #ffe3ec; }
+
+.hero-texto h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.12;
+    margin: 0 0 16px;
+}
+
+.hero-frase {
+    font-size: 17px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+    max-width: 420px;
+    opacity: 0.95;
+}
+
+.frete-gratis {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.18);
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+    width: fit-content;
+}
+
+.botao-destaque {
+    display: inline-block;
+    background-color: white;
+    color: var(--rosa-escuro);
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 800;
+    width: fit-content;
+    transition: transform 0.2s;
+}
+
+.botao-destaque:hover { transform: scale(1.05); }
+
+/* ===== Blocos de destaque (foto + texto, alternados) ===== */
+.bloco-destaque {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 44px auto;
+    background-color: var(--branco);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(74, 33, 56, 0.08);
+}
+
+.bloco-invertido { direction: rtl; }
+.bloco-invertido > * { direction: ltr; }
+
+.bloco-foto {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+}
+
+.bloco-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 44px;
+}
+
+.bloco-texto .rotulo { color: var(--rosa-escuro); }
+
+.bloco-texto h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--texto);
+    font-size: 28px;
+    margin: 0 0 12px;
+}
+
+.bloco-texto p {
+    color: var(--texto-suave);
+    font-size: 15.5px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+}
+
+.botao-secundario {
+    display: inline-block;
+    background-color: var(--rosa-claro);
+    color: var(--rosa-escuro);
+    text-decoration: none;
+    padding: 12px 26px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 15px;
+    width: fit-content;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.botao-secundario:hover {
+    background-color: var(--rosa-escuro);
+    color: white;
+    transform: scale(1.03);
+}
+
+/* ===== Layout geral ===== */
+main { max-width: 1100px; margin: auto; padding: 0 20px 30px; }
+
+h2 { font-family: var(--fonte-titulo); font-weight: 600; }
+
+.rotulo-centro, .titulo-centro { text-align: center; }
+
+.titulo-centro { font-size: 30px; margin: 0 0 8px; color: var(--rosa-escuro); }
+
+/* ===== Cardápio ===== */
+.cardapio { padding: 50px 0 20px; }
+
+.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.produto {
+    background-color: var(--branco);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.produto img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.produto h3 {
+    color: var(--rosa-medio);
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+    margin: 0 0 6px;
+}
+
+.produto p { color: var(--texto-suave); font-size: 14.5px; margin: 0 0 8px; line-height: 1.5; }
+
+.produto strong {
+    display: block;
+    color: var(--rosa-escuro);
+    font-size: 24px;
+    margin: 12px 0;
+}
+
+/* ===== Sabores ===== */
+.sabor-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--rosa-claro);
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 14px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+}
+
+.sabor-item:hover { transform: scale(1.02); }
+
+.sabor-item img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0;
+}
+
+.sabor-item span { font-size: 15px; color: var(--texto-suave); font-weight: 600; }
+
+.sabor-item.selecionado {
+    border: 2px solid var(--rosa-escuro);
+    box-shadow: 0 0 0 3px #ffd6df;
+    background-color: #ffe5eb;
+}
+
+.escolha-sabor { margin-top: 14px; text-align: left; }
+
+.escolha-sabor label {
+    display: block;
+    color: var(--rosa-escuro);
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.escolha-sabor select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--rosa-suave);
+    border-radius: 12px;
+    background-color: var(--rosa-claro);
+    color: var(--texto);
+    font-size: 15px;
+    font-family: var(--fonte-corpo);
+}
+
+/* ===== Controle de quantidade e botão do carrinho ===== */
+.controle-quantidade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 14px 0 6px;
+}
+
+.controle-quantidade button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid var(--rosa-suave);
+    background-color: var(--branco);
+    color: var(--rosa-escuro);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.controle-quantidade button:hover { background-color: var(--rosa-claro); }
+
+.quantidade-valor { font-size: 17px; font-weight: 700; min-width: 20px; text-align: center; }
+
+.botao-carrinho {
+    display: block;
+    width: 100%;
+    background-color: var(--rosa-medio);
+    color: white;
+    text-align: center;
+    padding: 14px;
+    margin-top: 8px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--fonte-corpo);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.botao-carrinho:hover {
+    transform: translateY(-2px);
+    background-color: var(--rosa-escuro);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Botão WhatsApp (contato / finalizar) ===== */
+.botao-whatsapp {
+    display: block;
+    width: 100%;
+    background-color: var(--whatsapp);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px;
+    margin-top: 15px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--fonte-corpo);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.botao-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15); }
+
+/* ===== Vídeo de destaque ===== */
+.video-destaque {
+    background-color: var(--branco);
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 24px;
+    margin: 40px 0;
+}
+
+.video-destaque h2 { color: var(--rosa-escuro); font-size: 26px; margin: 0 0 18px; }
+
+.video-destaque video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Bastidores ===== */
+.bastidores { padding: 10px 0 40px; text-align: center; }
+
+.galeria-subtitulo { color: var(--texto-suave); margin: 0 0 24px; }
+
+.foto-destaque { max-width: 600px; margin: 0 auto 30px; }
+
+.foto-destaque img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.foto-destaque img:hover { transform: scale(1.02); }
+
+.legenda-destaque { padding: 15px 10px 5px; }
+
+.legenda-destaque h3 { color: var(--rosa-escuro); margin-bottom: 8px; font-family: var(--fonte-titulo); }
+
+.legenda-destaque p { color: var(--texto-suave); line-height: 1.5; }
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.galeria img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.galeria img:hover { transform: scale(1.03); }
+
+/* ===== Seções de informação ===== */
+.informacao {
+    background-color: var(--branco);
+    padding: 32px 20px;
+    margin-top: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.informacao h2 { color: var(--rosa-escuro); font-size: 26px; }
+
+.informacao p {
+    font-size: 16.5px;
+    line-height: 1.6;
+    color: var(--texto-suave);
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.frete-gratis-inline { font-weight: 700; color: var(--rosa-escuro); }
+
+/* ===== Rodapé ===== */
+footer {
+    background-color: var(--rosa-escuro);
+    color: white;
+    text-align: center;
+    padding: 26px;
+    margin-top: 30px;
+}
+
+.footer-logo { width: 46px; margin: 0 auto 8px; opacity: 0.9; }
+
+footer p { font-family: var(--fonte-titulo); font-style: italic; font-size: 14px; margin: 0; }
+
+/* ===== Visualizador de imagem ===== */
+.visualizador {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(74, 33, 56, 0.88);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999; padding: 20px; box-sizing: border-box;
+}
+
+.visualizador img {
+    max-width: 95%; max-height: 85%; object-fit: contain;
+    border-radius: 15px; animation: aparecerFoto 0.25s ease;
+}
+
+@keyframes aparecerFoto {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.fechar {
+    position: absolute; top: 15px; right: 20px;
+    color: white; font-size: 40px; font-weight: bold; cursor: pointer; line-height: 1;
+}
+
+/* ===== Modal de loja fechada ===== */
+.modal-fundo {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); z-index: 950;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px; box-sizing: border-box;
+    opacity: 0; pointer-events: none; transition: opacity 0.25s;
+}
+
+.modal-fundo.aberto { opacity: 1; pointer-events: auto; }
+
+.modal-caixa {
+    background-color: var(--branco); border-radius: 20px; padding: 30px 26px;
+    max-width: 360px; width: 100%; text-align: center; position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-fechar { position: absolute; top: 10px; right: 16px; font-size: 28px; color: var(--texto-suave); cursor: pointer; line-height: 1; }
+.modal-logo { width: 60px; height: auto; margin: 0 auto 14px; display: block; }
+.modal-caixa h3 { color: var(--rosa-escuro); font-family: var(--fonte-titulo); font-size: 21px; margin: 0 0 10px; }
+.modal-caixa p { font-size: 15px; color: var(--texto); margin: 0 0 8px; line-height: 1.5; }
+.modal-subtexto { color: var(--texto-suave) !important; font-size: 14px !important; }
+
+/* ===== Carrinho flutuante e painel ===== */
+.carrinho-flutuante {
+    position: fixed; bottom: 22px; left: 22px; width: 58px; height: 58px;
+    background-color: var(--rosa-escuro); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); z-index: 500;
+    border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.carrinho-flutuante:hover { transform: scale(1.08); }
+
+.carrinho-contador {
+    position: absolute; top: -4px; right: -4px;
+    background-color: var(--dourado); color: white; font-size: 12px; font-weight: 700;
+    width: 22px; height: 22px; border-radius: 50%;
+    align-items: center; justify-content: center; display: none; border: 2px solid white;
+}
+
+.carrinho-fundo {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); z-index: 900;
+    opacity: 0; pointer-events: none; transition: opacity 0.25s;
+}
+
+.carrinho-fundo.aberto { opacity: 1; pointer-events: auto; }
+
+.carrinho-painel {
+    position: fixed; bottom: 0; left: 0; right: 0; max-width: 420px; margin: 0 auto;
+    background-color: var(--branco); border-radius: 24px 24px 0 0; z-index: 901; padding: 20px;
+    transform: translateY(100%); transition: transform 0.3s ease;
+    max-height: 80vh; display: flex; flex-direction: column;
+}
+
+.carrinho-painel.aberto { transform: translateY(0); }
+
+.carrinho-cabecalho { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.carrinho-cabecalho h3 { color: var(--rosa-escuro); font-family: var(--fonte-titulo); margin: 0; }
+.carrinho-fechar { font-size: 28px; color: var(--texto-suave); cursor: pointer; line-height: 1; }
+
+.carrinho-itens { overflow-y: auto; flex: 1; margin-bottom: 12px; }
+.carrinho-vazio { color: var(--texto-suave); text-align: center; padding: 20px 0; }
+
+.carrinho-item {
+    display: flex; justify-content: space-between; align-items: center;
+    background-color: var(--rosa-claro); padding: 10px 14px; border-radius: 14px; margin-bottom: 8px;
+}
+
+.carrinho-item-info { display: flex; flex-direction: column; font-size: 14px; color: var(--texto); }
+.carrinho-item-info span { color: var(--rosa-escuro); font-weight: 700; }
+.carrinho-item-remover { color: #c0392b; font-size: 13px; font-weight: 700; cursor: pointer; }
+
+.carrinho-rodape { border-top: 1px solid var(--rosa-claro); padding-top: 12px; }
+.carrinho-frete { text-align: center; font-size: 14px; font-weight: 700; color: var(--rosa-escuro); min-height: 18px; margin: 0 0 8px; }
+.carrinho-total { text-align: center; font-size: 18px; margin: 0 0 12px; }
+.carrinho-total strong { color: var(--rosa-escuro); }
+
+/* ===== Botão flutuante do WhatsApp ===== */
+.whatsapp-flutuante {
+    position: fixed; bottom: 22px; right: 22px; width: 58px; height: 58px;
+    background-color: var(--whatsapp); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); z-index: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulsarWhatsapp 2.4s ease-in-out infinite;
+}
+
+.whatsapp-flutuante:hover { transform: scale(1.08); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); }
+
+@keyframes pulsarWhatsapp {
+    0%, 100% { box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    50% { box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(37, 211, 102, 0); }
+}
+
+/* ===== Acessibilidade ===== */
+a:focus-visible, button:focus-visible, select:focus-visible {
+    outline: 3px solid var(--rosa-escuro);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 780px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-foto { height: 260px; min-height: 0; }
+    .hero-texto { padding: 36px 26px; }
+    .hero-texto h1 { font-size: 34px; }
+
+    .bloco-destaque, .bloco-invertido { grid-template-columns: 1fr; direction: ltr; }
+    .bloco-foto { height: 220px; min-height: 0; }
+    .bloco-texto { padding: 28px 26px; }
+
+    .galeria { grid-template-columns: repeat(2, 1fr); }
+    .foto-destaque img { height: 220px; }
+}
+
+@media (max-width: 460px) {
+    .topo-conteudo { padding: 10px 16px 0; }
+    .logo { width: 50px; }
+    .nav-principal { gap: 16px; }
+    .whatsapp-flutuante { width: 52px; height: 52px; bottom: 16px; right: 16px; }
+    .carrinho-flutuante { width: 52px; height: 52px; bottom: 16px; left: 16px; }
+}

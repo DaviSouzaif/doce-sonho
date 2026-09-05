@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doce Sonho — Doceria</title>
+<meta name="description" content="Doce Sonho: brownies, sorvetes, dindins gourmet e trufas feitos com carinho. Faça seu pedido pelo WhatsApp e receba rapidinho.">
+<meta property="og:title" content="Doce Sonho — Doceria">
+<meta property="og:description" content="Brownies, sorvetes, dindins gourmet e trufas feitos com carinho. Peça pelo WhatsApp!">
+<meta property="og:image" content="images/Assunto.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-conteudo">
+    <img src="images/Assunto.png" alt="Logo Doce Sonho" class="logo">
+    <div id="status-loja" class="status-loja"></div>
+  </div>
+  <nav class="nav-principal">
+    <a href="#inicio">Início</a>
+    <a href="#produtos">Doces</a>
+    <a href="#pedidos">Pedidos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<div id="modal-fechado-fundo" class="modal-fundo" onclick="fecharModalFechadoFundo(event)">
+  <div class="modal-caixa">
+    <span class="modal-fechar" onclick="fecharModalFechado()">&times;</span>
+    <img src="images/Assunto.png" alt="Logo Doce Sonho" class="modal-logo">
+    <h3>Estamos fechados no momento</h3>
+    <p id="modal-fechado-texto"></p>
+    <p class="modal-subtexto">Fique à vontade pra navegar e fazer seu pedido — respondemos assim que abrirmos!</p>
+  </div>
+</div>
+
+<section class="hero" id="inicio">
+  <img src="images/brownie-pote.jpg" alt="Brownie no pote Doce Sonho" class="hero-foto">
+  <div class="hero-texto">
+    <p class="rotulo">FEITO À MÃO, PEDIDO PELO ZAP</p>
+    <h1>Onde todo sonho<br>tem um toque doce</h1>
+    <p class="hero-frase">Brownies, dindins, sorvetes e trufas artesanais, preparados aos poucos e embalados com carinho.</p>
+    <div class="frete-gratis">Frete grátis a partir de R$ 10,00 para bairros locais</div>
+    <a href="#produtos" class="botao-destaque">Ver o cardápio</a>
+  </div>
+</section>
+
+<main>
+
+  <section class="bloco-destaque">
+    <img src="images/dindin-pudim.jpg" alt="Dindin Gourmet Doce Sonho" class="bloco-foto">
+    <div class="bloco-texto">
+      <p class="rotulo">MAIS PEDIDO</p>
+      <h2>Dindin Gourmet</h2>
+      <p>Cinco sabores pra escolher — do clássico Ninho com Nutella ao novo Pudim, cremoso e diferente de tudo.</p>
+      <a href="#dindin-gourmet" class="botao-secundario">Ver sabores</a>
+    </div>
+  </section>
+
+  <section class="bloco-destaque bloco-invertido">
+    <img src="images/trufas.jpg" alt="Trufas artesanais Doce Sonho" class="bloco-foto">
+    <div class="bloco-texto">
+      <p class="rotulo">NOVIDADE</p>
+      <h2>Trufas artesanais</h2>
+      <p>Seis sabores pra experimentar aos poucos: Chocolate, Dois Amores, Açaí, Amendoim, Beijinho e Ninho.</p>
+      <a href="#trufas" class="botao-secundario">Ver sabores</a>
+    </div>
+  </section>
+
+  <section class="cardapio" id="produtos">
+    <p class="rotulo rotulo-centro">CARDÁPIO</p>
+    <h2 class="titulo-centro">Nossos doces</h2>
+    <div id="grade-produtos" class="grade-produtos"></div>
+  </section>
+
+  <section class="video-destaque">
+    <h2>Uma colherada de pura cremosidade</h2>
+    <video id="video-doce" muted loop playsinline webkit-playsinline="true" x-webkit-airplay="allow" preload="auto" poster="images/galeria7.jpg">
+      <source src="doce-video.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+  </section>
+
+  <section id="bastidores" class="bastidores">
+    <p class="rotulo rotulo-centro">BASTIDORES</p>
+    <h2 class="titulo-centro">De dar água na boca</h2>
+    <p class="galeria-subtitulo">Pequenos momentos, grandes sabores</p>
+
+    <div class="foto-destaque">
+      <img src="images/galeria7.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <div class="legenda-destaque">
+        <h3>Um carinho em forma de doce</h3>
+        <p>Cada detalhe é preparado com carinho para deixar seu dia ainda mais gostoso.</p>
+      </div>
+    </div>
+
+    <div class="galeria">
+      <img src="images/galeria2.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="images/galeria3.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="images/galeria5.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="images/galeria6.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="images/galeria-sorvete2.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="images/galeria8.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="images/galeria9.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+      <img src="images/sorvete-chocolate.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
+    </div>
+  </section>
+
+  <section id="pedidos" class="informacao">
+    <h2>Faça seu pedido</h2>
+    <p>Adicione seus doces favoritos ao carrinho e finalize tudo de uma vez pelo WhatsApp.</p>
+    <p class="frete-gratis-inline">Frete grátis a partir de R$ 10,00 para bairros locais</p>
+  </section>
+
+  <section id="contato" class="informacao">
+    <h2>Fale com a Doce Sonho</h2>
+    <p>Entre em contato conosco para fazer seu pedido ou tirar suas dúvidas.</p>
+    <p>WhatsApp: (88) 99798-4717</p>
+    <p>Formas de pagamento: Dinheiro, Pix e Cartão</p>
+    <a href="https://wa.me/5588997984717" class="botao-whatsapp">Falar pelo WhatsApp</a>
+  </section>
+
+</main>
+
+<footer>
+  <img src="images/Assunto.png" alt="Logo Doce Sonho" class="footer-logo">
+  <p>© 2026 Doce Sonho — Feito com amor</p>
+</footer>
+
+<a
+  href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido"
+  class="whatsapp-flutuante"
+  target="_blank"
+  rel="noopener"
+  aria-label="Falar no WhatsApp"
+>
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+    <path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.87 11.87L4 20l4.24-1.11a7.9 7.9 0 0 0 3.8.97h.01a7.94 7.94 0 0 0 5.55-13.54zm-5.55 12.2a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1 1 5.59 3.09zm3.62-4.94c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.2-.5.64-.62.77-.11.13-.23.15-.42.05a5.4 5.4 0 0 1-1.6-.98 5.99 5.99 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4.09-.1.2-.23.3-.35.1-.11.13-.2.2-.33.06-.13.03-.24-.02-.34-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.2-.68.66-.68 1.6s.7 1.86.8 1.99c.1.13 1.37 2.1 3.33 2.94.46.2.83.32 1.11.41.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.16-.46.16-.86.11-.94-.05-.08-.18-.13-.38-.23z"/>
+  </svg>
+</a>
+
+<button type="button" class="carrinho-flutuante" onclick="abrirCarrinho()" aria-label="Ver carrinho">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+    <path d="M7 4h-2l-1 2v1h2l3.6 7.59-1.35 2.44c-.16.28-.25.61-.25.97 0 1.1.9 2 2 2h12v-2h-11.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.42 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1h-14.98l-.94-2z"/>
+  </svg>
+  <span class="carrinho-contador" id="carrinho-contador">0</span>
+</button>
+
+<div id="carrinho-painel" class="carrinho-painel">
+  <div class="carrinho-cabecalho">
+    <h3>Seu carrinho</h3>
+    <span class="carrinho-fechar" onclick="fecharCarrinho()">&times;</span>
+  </div>
+  <div id="carrinho-itens" class="carrinho-itens">
+    <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+  </div>
+  <div class="carrinho-rodape">
+    <p id="carrinho-frete" class="carrinho-frete"></p>
+    <p class="carrinho-total">Total: <strong id="carrinho-total">R$ 0,00</strong></p>
+    <button type="button" class="botao-whatsapp" onclick="finalizarPedido()">Finalizar pedido no WhatsApp</button>
+  </div>
+</div>
+<div id="carrinho-fundo" class="carrinho-fundo" onclick="fecharCarrinho()"></div>
+
+<div class="visualizador-vazio" id="visualizador-vazio"></div>
+
+<script src="produtos.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

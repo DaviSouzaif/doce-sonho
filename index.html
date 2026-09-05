@@ -16,7 +16,8 @@
 <header>
   <img src="Assunto.png" alt="Logo Doce Sonho" class="logo">
   <h1>Doce Sonho</h1>
-  <p>Onde todo sonho tem um toque doce. 💖</p>
+  <p>Onde todo sonho tem um toque doce.</p>
+  <div id="status-loja" class="status-loja"></div>
 </header>
 
 <nav>
@@ -26,23 +27,34 @@
   <a href="#contato">Contato</a>
 </nav>
 
+<div id="modal-fechado-fundo" class="modal-fundo" onclick="fecharModalFechadoFundo(event)">
+  <div class="modal-caixa">
+    <span class="modal-fechar" onclick="fecharModalFechado()">&times;</span>
+    <img src="Assunto.png" alt="Logo Doce Sonho" class="modal-logo">
+    <h3>Estamos fechados no momento</h3>
+    <p id="modal-fechado-texto"></p>
+    <p class="modal-subtexto">Fique à vontade pra navegar e fazer seu pedido — respondemos assim que abrirmos!</p>
+  </div>
+</div>
+
 <main>
 
   <section class="destaque">
     <h2>Bem-vindo à Doce Sonho!</h2>
     <p>Encontre aqui deliciosos doces feitos com muito carinho.</p>
+    <div class="frete-gratis">Frete grátis em pedidos a partir de R$ 10,00 para bairros locais</div>
     <div class="decoracao">✦ ✧ ✦</div>
     <a href="#produtos" class="botao-destaque">Ver nossos doces</a>
   </section>
 
   <section id="galeria">
     <h2>De dar água na boca</h2>
-    <p class="galeria-subtitulo">Pequenos momentos, grandes sabores 💗</p>
+    <p class="galeria-subtitulo">Pequenos momentos, grandes sabores</p>
 
     <div class="foto-destaque">
       <img src="galeria7.jpg" alt="Delícia da Doce Sonho" onclick="abrirImagem(this.src)">
       <div class="legenda-destaque">
-        <h3>Um carinho em forma de doce 💗</h3>
+        <h3>Um carinho em forma de doce</h3>
         <p>Cada detalhe é preparado com carinho para deixar seu dia ainda mais gostoso.</p>
       </div>
     </div>
@@ -63,32 +75,61 @@
     <h2 style="grid-column: 1 / -1;">Nossos doces</h2>
 
     <div class="produto">
-      <img src="morango.JPG" alt="Brownie Doce Sonho" class="foto-brownie">
+      <img src="brownie.jpg" alt="Brownie Doce Sonho">
       <h3>Brownie</h3>
       <p>Delicioso brownie feito com muito chocolate.</p>
       <strong>R$ 7,00</strong>
-      <a href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20pedir%20um%20Brownie%20" class="botao-whatsapp">
-        Comprar pelo WhatsApp
-      </a>
+      <div class="controle-quantidade">
+        <button type="button" onclick="alterarQuantidade(this, -1)" aria-label="Diminuir quantidade">−</button>
+        <span class="quantidade-valor">1</span>
+        <button type="button" onclick="alterarQuantidade(this, 1)" aria-label="Aumentar quantidade">+</button>
+      </div>
+      <button onclick="adicionarSimples(this, 'Brownie', 7.00)" class="botao-carrinho">
+        Adicionar ao carrinho
+      </button>
     </div>
 
     <div class="produto">
-      <img src="brigadeiro.JPG" alt="Sorvete Doce Sonho">
+      <img src="brownie-pote.jpg" alt="Brownie no Pote Doce Sonho">
+      <h3>Brownie no Pote</h3>
+      <p>Brownie cremoso servido no pote, com calda de chocolate.</p>
+      <strong>R$ 7,00</strong>
+      <div class="controle-quantidade">
+        <button type="button" onclick="alterarQuantidade(this, -1)" aria-label="Diminuir quantidade">−</button>
+        <span class="quantidade-valor">1</span>
+        <button type="button" onclick="alterarQuantidade(this, 1)" aria-label="Aumentar quantidade">+</button>
+      </div>
+      <button onclick="adicionarSimples(this, 'Brownie no Pote', 7.00)" class="botao-carrinho">
+        Adicionar ao carrinho
+      </button>
+    </div>
+
+    <div class="produto">
+      <img src="sorvete-ninho-trufado.jpg" alt="Sorvete Doce Sonho">
       <h3>Sorvete</h3>
       <p>Delicioso sorvete para refrescar seu dia.</p>
       <strong>R$ 4,00</strong>
       <div class="sabores-escolha" data-produto="Sorvete">
         <p><strong>Escolha seu sabor:</strong></p>
-        <div class="sabor-item" data-sabor="Flocos" onclick="selecionarSabor(this)">
+        <div class="sabor-item" data-sabor="Flocos" data-preco="4,00" onclick="selecionarSabor(this)">
           <img src="sorvete-flocos.jpg" alt="Sorvete sabor Flocos">
           <span>Flocos</span>
         </div>
-        <div class="sabor-item" data-sabor="Chocolate" onclick="selecionarSabor(this)">
+        <div class="sabor-item" data-sabor="Chocolate" data-preco="4,00" onclick="selecionarSabor(this)">
           <img src="sorvete-chocolate.jpg" alt="Sorvete sabor Chocolate">
           <span>Chocolate</span>
         </div>
-        <button onclick="pedirComSabor(this)" class="botao-whatsapp">
-          Comprar pelo WhatsApp
+        <div class="sabor-item" data-sabor="Ninho Trufado" data-preco="4,00" onclick="selecionarSabor(this)">
+          <img src="sorvete-ninho-trufado.jpg" alt="Sorvete sabor Ninho Trufado">
+          <span>Ninho Trufado</span>
+        </div>
+        <div class="controle-quantidade">
+          <button type="button" onclick="alterarQuantidade(this, -1)" aria-label="Diminuir quantidade">−</button>
+          <span class="quantidade-valor">1</span>
+          <button type="button" onclick="alterarQuantidade(this, 1)" aria-label="Aumentar quantidade">+</button>
+        </div>
+        <button onclick="adicionarComSabor(this)" class="botao-carrinho">
+          Adicionar ao carrinho
         </button>
       </div>
     </div>
@@ -97,39 +138,71 @@
       <img src="bolo.jpg" alt="Dindin Gourmet Doce Sonho">
       <h3>Dindin Gourmet</h3>
       <p>Dindin gourmet cremoso e delicioso.</p>
-      <strong>R$ 4,00</strong>
+      <strong id="preco-dindin">A partir de R$ 4,00</strong>
       <div class="sabores-escolha" data-produto="Dindin Gourmet">
         <p><strong>Escolha seu sabor:</strong></p>
-        <div class="sabor-item" data-sabor="Ninho com Nutella" onclick="selecionarSabor(this)">
+        <div class="sabor-item" data-sabor="Ninho com Nutella" data-preco="4,00" onclick="selecionarSabor(this)">
           <img src="dindin-ninho-nutella.jpg" alt="Dindin Gourmet Ninho com Nutella">
           <span>Ninho com Nutella</span>
         </div>
-        <div class="sabor-item" data-sabor="Morango com Nutella" onclick="selecionarSabor(this)">
+        <div class="sabor-item" data-sabor="Morango com Nutella" data-preco="4,00" onclick="selecionarSabor(this)">
           <img src="dindin-morango-nutella.jpg" alt="Dindin Gourmet Morango com Nutella">
           <span>Morango com Nutella</span>
         </div>
-        <div class="sabor-item" data-sabor="Chocolate" onclick="selecionarSabor(this)">
+        <div class="sabor-item" data-sabor="Chocolate" data-preco="4,00" onclick="selecionarSabor(this)">
           <img src="dindin-chocolate.jpg" alt="Dindin Gourmet Chocolate">
           <span>Chocolate</span>
         </div>
-        <div class="sabor-item" data-sabor="Prestígio" onclick="selecionarSabor(this)">
+        <div class="sabor-item" data-sabor="Prestígio" data-preco="4,00" onclick="selecionarSabor(this)">
           <img src="dindin-prestigio.jpg" alt="Dindin Gourmet Prestígio">
           <span>Prestígio</span>
         </div>
-        <div class="sabor-item" data-sabor="Pudim" onclick="selecionarSabor(this)">
+        <div class="sabor-item" data-sabor="Pudim" data-preco="5,00" onclick="selecionarSabor(this)">
           <img src="dindin-pudim.jpg" alt="Dindin Gourmet Pudim">
-          <span>Pudim</span>
+          <span>Pudim (R$ 5,00)</span>
         </div>
-        <button onclick="pedirComSabor(this)" class="botao-whatsapp">
-          Comprar pelo WhatsApp
+        <div class="controle-quantidade">
+          <button type="button" onclick="alterarQuantidade(this, -1)" aria-label="Diminuir quantidade">−</button>
+          <span class="quantidade-valor">1</span>
+          <button type="button" onclick="alterarQuantidade(this, 1)" aria-label="Aumentar quantidade">+</button>
+        </div>
+        <button onclick="adicionarComSabor(this)" class="botao-carrinho">
+          Adicionar ao carrinho
         </button>
       </div>
+    </div>
+
+    <div class="produto">
+      <img src="trufas.jpg" alt="Trufas Doce Sonho">
+      <h3>Trufas</h3>
+      <p>Trufas artesanais em diversos sabores.</p>
+      <strong>R$ 3,00</strong>
+      <div class="escolha-sabor">
+        <label for="sabor-trufas">Escolha seu sabor:</label>
+        <select id="sabor-trufas">
+          <option value="">Selecione um sabor</option>
+          <option value="Chocolate">Chocolate</option>
+          <option value="Dois Amores">Dois Amores</option>
+          <option value="Açaí">Açaí</option>
+          <option value="Amendoim">Amendoim</option>
+          <option value="Beijinho">Beijinho</option>
+          <option value="Ninho">Ninho</option>
+        </select>
+      </div>
+      <div class="controle-quantidade">
+        <button type="button" onclick="alterarQuantidade(this, -1)" aria-label="Diminuir quantidade">−</button>
+        <span class="quantidade-valor">1</span>
+        <button type="button" onclick="alterarQuantidade(this, 1)" aria-label="Aumentar quantidade">+</button>
+      </div>
+      <button onclick="adicionarTrufas(this)" class="botao-carrinho">
+        Adicionar ao carrinho
+      </button>
     </div>
 
   </section>
 
   <section class="video-destaque">
-    <h2>Uma colherada de pura cremosidade </h2>
+    <h2>Uma colherada de pura cremosidade</h2>
     <video id="video-doce" muted loop playsinline webkit-playsinline="true" x-webkit-airplay="allow" preload="auto" poster="galeria7.jpg">
       <source src="doce-video.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.
@@ -137,18 +210,16 @@
   </section>
 
   <section id="pedidos" class="informacao">
-    <h2>🛒 Faça seu pedido</h2>
-    <p>Escolha seu doce favorito e fale conosco pelo WhatsApp.</p>
-    <a href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20🍰" class="botao-whatsapp">
-      Fazer pedido pelo WhatsApp
-    </a>
+    <h2>Faça seu pedido</h2>
+    <p>Adicione seus doces favoritos ao carrinho e finalize tudo de uma vez pelo WhatsApp.</p>
+    <p class="frete-gratis-inline">Frete grátis a partir de R$ 10,00 para bairros locais</p>
   </section>
 
   <section id="contato" class="informacao">
-    <h2>📍 Fale com a Doce Sonho</h2>
+    <h2>Fale com a Doce Sonho</h2>
     <p>Entre em contato conosco para fazer seu pedido ou tirar suas dúvidas.</p>
-    <p>📱 WhatsApp: (88) 99798-4717</p>
-    <p>💳 Formas de pagamento: Dinheiro, Pix e Cartão</p>
+    <p>WhatsApp: (88) 99798-4717</p>
+    <p>Formas de pagamento: Dinheiro, Pix e Cartão</p>
     <a href="https://wa.me/5588997984717" class="botao-whatsapp">
       Falar pelo WhatsApp
     </a>
@@ -157,11 +228,11 @@
 </main>
 
 <footer>
-  <p>© 2026 Doce Sonho — Feito com amor 💕</p>
+  <p>© 2026 Doce Sonho — Feito com amor</p>
 </footer>
 
 <a
-  href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20🍰"
+  href="https://wa.me/5588997984717?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido"
   class="whatsapp-flutuante"
   target="_blank"
   rel="noopener"
@@ -172,8 +243,81 @@
   </svg>
 </a>
 
+<button type="button" class="carrinho-flutuante" onclick="abrirCarrinho()" aria-label="Ver carrinho">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="white">
+    <path d="M7 4h-2l-1 2v1h2l3.6 7.59-1.35 2.44c-.16.28-.25.61-.25.97 0 1.1.9 2 2 2h12v-2h-11.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.42 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1h-14.98l-.94-2z"/>
+  </svg>
+  <span class="carrinho-contador" id="carrinho-contador">0</span>
+</button>
+
+<div id="carrinho-painel" class="carrinho-painel">
+  <div class="carrinho-cabecalho">
+    <h3>Seu carrinho</h3>
+    <span class="carrinho-fechar" onclick="fecharCarrinho()">&times;</span>
+  </div>
+  <div id="carrinho-itens" class="carrinho-itens">
+    <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+  </div>
+  <div class="carrinho-rodape">
+    <p id="carrinho-frete" class="carrinho-frete"></p>
+    <p class="carrinho-total">Total: <strong id="carrinho-total">R$ 0,00</strong></p>
+    <button type="button" class="botao-whatsapp" onclick="finalizarPedido()">
+      Finalizar pedido no WhatsApp
+    </button>
+  </div>
+</div>
+<div id="carrinho-fundo" class="carrinho-fundo" onclick="fecharCarrinho()"></div>
+
 <script>
   const numeroWhatsapp = "5588997984717";
+
+  // ===== Status da loja (aberto/fechado por horário) =====
+  // TESTE: horário de funcionamento das 07:00 às 21:00, todos os dias
+  const HORARIO_ABERTURA = 7;
+  const HORARIO_FECHAMENTO = 21;
+
+  function atualizarStatusLoja() {
+    const statusEl = document.getElementById("status-loja");
+    if (!statusEl) return;
+
+    const agora = new Date();
+    const hora = agora.getHours() + agora.getMinutes() / 60;
+    const aberto = hora >= HORARIO_ABERTURA && hora < HORARIO_FECHAMENTO;
+
+    if (aberto) {
+      statusEl.textContent = `Aberto agora — atendimento até às ${HORARIO_FECHAMENTO}h`;
+      statusEl.className = "status-loja status-aberto";
+    } else {
+      statusEl.textContent = `Fechado no momento — voltamos às ${HORARIO_ABERTURA}h`;
+      statusEl.className = "status-loja status-fechado";
+      abrirModalFechado();
+    }
+  }
+
+  function abrirModalFechado() {
+    if (sessionStorage.getItem("modalFechadoVisto") === "sim") return;
+
+    const modalTexto = document.getElementById("modal-fechado-texto");
+    if (modalTexto) {
+      modalTexto.textContent = `Nosso horário de atendimento é das ${HORARIO_ABERTURA}h às ${HORARIO_FECHAMENTO}h.`;
+    }
+    const fundo = document.getElementById("modal-fechado-fundo");
+    if (fundo) fundo.classList.add("aberto");
+  }
+
+  function fecharModalFechado() {
+    const fundo = document.getElementById("modal-fechado-fundo");
+    if (fundo) fundo.classList.remove("aberto");
+    sessionStorage.setItem("modalFechadoVisto", "sim");
+  }
+
+  function fecharModalFechadoFundo(evento) {
+    if (evento.target.id === "modal-fechado-fundo") {
+      fecharModalFechado();
+    }
+  }
+
+  atualizarStatusLoja();
 
   // Toca o vídeo só quando ele entra na tela, pausa quando sai
   const video = document.getElementById("video-doce");
@@ -217,20 +361,165 @@
     });
     elemento.classList.add("selecionado");
     grupo.dataset.saborSelecionado = elemento.dataset.sabor;
+    grupo.dataset.precoSelecionado = elemento.dataset.preco || "";
+
+    // Atualiza o preço exibido no card, se o sabor tiver um preço específico
+    if (elemento.dataset.preco) {
+      const card = grupo.closest(".produto");
+      const precoElemento = card ? card.querySelector("strong[id^='preco-']") : null;
+      if (precoElemento) {
+        precoElemento.textContent = `R$ ${elemento.dataset.preco}`;
+      }
+    }
   }
 
-  // Envia o pedido pelo WhatsApp com o sabor escolhido
-  function pedirComSabor(botao) {
+  // Controle de quantidade (+ / −) usado antes de adicionar ao carrinho
+  function alterarQuantidade(botao, delta) {
+    const controle = botao.closest(".controle-quantidade");
+    const valor = controle.querySelector(".quantidade-valor");
+    let atual = parseInt(valor.textContent, 10) || 1;
+    atual = Math.max(1, atual + delta);
+    valor.textContent = atual;
+  }
+
+  // ===== Carrinho de compras =====
+  const carrinho = [];
+
+  function paraNumero(precoTexto) {
+    return parseFloat(String(precoTexto).replace(",", "."));
+  }
+
+  function paraTextoPreco(numero) {
+    return numero.toFixed(2).replace(".", ",");
+  }
+
+  function adicionarAoCarrinho(nome, sabor, precoUnitario, quantidade) {
+    const chave = nome + (sabor ? ` (${sabor})` : "");
+    const existente = carrinho.find(item => item.chave === chave);
+    if (existente) {
+      existente.quantidade += quantidade;
+    } else {
+      carrinho.push({ chave, nome, sabor, precoUnitario, quantidade });
+    }
+    atualizarCarrinho();
+    abrirCarrinho();
+  }
+
+  // Produto sem sabor (ex: Brownie)
+  function adicionarSimples(botao, nome, precoUnitario) {
+    const card = botao.closest(".produto");
+    const controle = card.querySelector(".controle-quantidade .quantidade-valor");
+    const quantidade = parseInt(controle.textContent, 10) || 1;
+    adicionarAoCarrinho(nome, null, precoUnitario, quantidade);
+    controle.textContent = "1";
+  }
+
+  // Produto com sabor (ex: Sorvete, Dindin Gourmet)
+  function adicionarComSabor(botao) {
     const grupo = botao.closest(".sabores-escolha");
     const sabor = grupo.dataset.saborSelecionado;
+    const preco = grupo.dataset.precoSelecionado;
     const produto = grupo.dataset.produto;
 
     if (!sabor) {
-      alert("Escolha um sabor antes de fazer o pedido.");
+      alert("Escolha um sabor antes de adicionar ao carrinho.");
       return;
     }
 
-    const mensagem = `Olá! Gostaria de pedir um ${produto} sabor ${sabor}. `;
+    const controle = grupo.querySelector(".controle-quantidade .quantidade-valor");
+    const quantidade = parseInt(controle.textContent, 10) || 1;
+    adicionarAoCarrinho(produto, sabor, paraNumero(preco), quantidade);
+    controle.textContent = "1";
+  }
+
+  // Produto com sabor escolhido via dropdown (ex: Trufas)
+  function adicionarTrufas(botao) {
+    const card = botao.closest(".produto");
+    const select = card.querySelector("#sabor-trufas");
+    const sabor = select.value;
+
+    if (!sabor) {
+      alert("Escolha um sabor antes de adicionar ao carrinho.");
+      return;
+    }
+
+    const controle = card.querySelector(".controle-quantidade .quantidade-valor");
+    const quantidade = parseInt(controle.textContent, 10) || 1;
+    adicionarAoCarrinho("Trufas", sabor, 3.00, quantidade);
+    controle.textContent = "1";
+    select.value = "";
+  }
+
+  function removerDoCarrinho(indice) {
+    carrinho.splice(indice, 1);
+    atualizarCarrinho();
+  }
+
+  function calcularTotal() {
+    return carrinho.reduce((soma, item) => soma + item.precoUnitario * item.quantidade, 0);
+  }
+
+  function atualizarCarrinho() {
+    const contador = document.getElementById("carrinho-contador");
+    const listaEl = document.getElementById("carrinho-itens");
+    const totalEl = document.getElementById("carrinho-total");
+    const freteEl = document.getElementById("carrinho-frete");
+
+    const totalItens = carrinho.reduce((soma, item) => soma + item.quantidade, 0);
+    contador.textContent = totalItens;
+    contador.style.display = totalItens > 0 ? "flex" : "none";
+
+    if (carrinho.length === 0) {
+      listaEl.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio.</p>';
+    } else {
+      listaEl.innerHTML = carrinho.map((item, indice) => `
+        <div class="carrinho-item">
+          <div class="carrinho-item-info">
+            <strong>${item.quantidade}x ${item.nome}${item.sabor ? ` (${item.sabor})` : ""}</strong>
+            <span>R$ ${paraTextoPreco(item.precoUnitario * item.quantidade)}</span>
+          </div>
+          <span class="carrinho-item-remover" onclick="removerDoCarrinho(${indice})">Remover</span>
+        </div>
+      `).join("");
+    }
+
+    const total = calcularTotal();
+    totalEl.textContent = `R$ ${paraTextoPreco(total)}`;
+
+    if (total === 0) {
+      freteEl.textContent = "";
+    } else if (total >= 10) {
+      freteEl.textContent = "Você garantiu o frete grátis para bairros locais!";
+    } else {
+      const faltam = 10 - total;
+      freteEl.textContent = `Faltam R$ ${paraTextoPreco(faltam)} para o frete grátis (bairros locais)`;
+    }
+  }
+
+  function abrirCarrinho() {
+    document.getElementById("carrinho-painel").classList.add("aberto");
+    document.getElementById("carrinho-fundo").classList.add("aberto");
+  }
+
+  function fecharCarrinho() {
+    document.getElementById("carrinho-painel").classList.remove("aberto");
+    document.getElementById("carrinho-fundo").classList.remove("aberto");
+  }
+
+  function finalizarPedido() {
+    if (carrinho.length === 0) {
+      alert("Seu carrinho está vazio.");
+      return;
+    }
+
+    let mensagem = "Olá! Gostaria de fazer o seguinte pedido:\n\n";
+    carrinho.forEach(item => {
+      mensagem += `• ${item.quantidade}x ${item.nome}${item.sabor ? ` (${item.sabor})` : ""} - R$ ${paraTextoPreco(item.precoUnitario * item.quantidade)}\n`;
+    });
+    const total = calcularTotal();
+    mensagem += `\nTotal: R$ ${paraTextoPreco(total)}`;
+    mensagem += total >= 10 ? "\nFrete grátis (bairros locais)!" : `\n(Faltam R$ ${paraTextoPreco(10 - total)} para frete grátis em bairros locais)`;
+
     window.location.href = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
   }
 
